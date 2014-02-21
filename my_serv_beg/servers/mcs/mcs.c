@@ -104,10 +104,6 @@ PUBLIC int main(int argc, char **argv)
           report("MCS","warning, got illegal request ", callnr);
           result = EINVAL;
       }
-
-      if (result != EDONTREPLY) {
-          reply(who, result);
-      }
   }
   return(OK);       /* shouldn't come here */
 }
