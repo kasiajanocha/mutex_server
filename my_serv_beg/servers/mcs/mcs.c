@@ -200,11 +200,18 @@ PRIVATE int locked_nmb(int mutex_id)
 PRIVATE void lock(int mutex_id,int proc)
 {
   struct mutex m;
+  int index;
   m.id = mutex_id;
   m.process = proc;
 
-  if(is_locked(mutex_id)) 
+  index = locked_nmb(mutex_id);
+  if(index != -1) 
   {
+    if (locked_mutexes[index].process == proc)
+    {
+      reply(proc, 0);
+      return;
+    }
     /* dodaj na kolejke*/
     mut_queue[mut_queue_size] = m;
     mut_queue_size++;
@@ -342,6 +349,7 @@ PRIVATE void deal_with_unlock_sig(int mutex_id, int who)
   if(locked_mutexes[index].process != who)
   {
     reply(who, -1);
+    return;
   }
   m = locked_mutexes[index];
   unlock(index, mutex_id);
