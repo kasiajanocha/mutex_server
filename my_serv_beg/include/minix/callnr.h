@@ -42,14 +42,14 @@
 #define SETGID		  46
 #define GETGID		  47
 #define SIGNAL		  48
-#define MCS_LOCK	  49	/* to MCS	*/
-#define MCS_UNLOCK	  50	/* to MCS	*/
-#define MCS_WAIT	  51	/* to MCS	*/
-#define MCS_BROADCAST 52	/* to MCS	*/
-#define MCS_UNPAUSE	  53	/* to MCS	*/
+#define MCS_LOCK	  49
+#define MCS_UNLOCK	  50
+#define MCS_WAIT	  51
+#define MCS_BROADCAST 52
+#define MCS_UNPAUSE	  53
 #define IOCTL		  54
 #define FCNTL		  55
-#define MCS_EXIT	  56	/* to MCS	*/
+#define MCS_EXIT	  56
 #define EXEC		  59
 #define UMASK		  60 
 #define CHROOT		  61 

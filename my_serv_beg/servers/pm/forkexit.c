@@ -151,6 +151,8 @@ int exit_status;		/* the process' exit status (for parent) */
   tell_fs(EXIT, proc_nr, 0, 0);  /* file system can free the proc slot */
   sys_exit(proc_nr);
 
+  tell_mcs(MCS_EXIT, proc_nr);
+
   /* Pending reply messages for the dead process cannot be delivered. */
   rmp->mp_flags &= ~REPLY;
   

@@ -608,6 +608,7 @@ int pro;			/* which process number */
 
   /* Process is not hanging on an PM call.  Ask FS to take a look. */
   tell_fs(UNPAUSE, pro, 0, 0);
+  tell_mcs(MCS_UNPAUSE, pro);
 }
 
 /*===========================================================================*
